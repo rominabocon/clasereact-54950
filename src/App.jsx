@@ -4,7 +4,7 @@ import './App.css'
 import ToDoForm from './components/ToDoForm/ToDoForm'
 import ToDoList from './components/ToDoList/ToDoList'
 import { Route, Routes } from 'react-router-dom'
-
+import NavBar from './components/NavBar/NavBar'
 function App() {
   const [tareas, setTareas] = useState([
     {
@@ -31,10 +31,11 @@ function App() {
 
   return (
     <>
-      <h1>Hola esta es una app</h1>
+      <NavBar />
       <Routes>
         <Route path='/list' element={<ToDoList todos={tareas} removeOne={removeOne} />} />
         <Route path='/form' element={<ToDoForm addToDo={addToDo} />} />
+
       </Routes>
 
 
